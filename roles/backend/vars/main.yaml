@@ -1,0 +1,4 @@
+login_user: root
+login_host: db.daws24.online
+login_password: DevOps321
+DB_HOST: db.daws24.online
