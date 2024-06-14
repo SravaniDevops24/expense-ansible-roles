@@ -2,6 +2,7 @@
   ansible.builtin.dnf:
     name: mysql-server
     state: latest
+
 - name: Start and Enable MySQL Server
   ansible.builtin.service:
     name: mysqld
@@ -14,12 +15,6 @@
     - PyMySQL
     - cryptography
     executable: pip3.9  # pip3.11 used if python version is 3.11
-
-# - name: Start and Enable MySQL Server
-#   ansible.builtin.service:
-#     name: mysqld
-#     state: started
-#     enabled: yes
 
 # check password is already setup or not
 - name: checking db connection
