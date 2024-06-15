@@ -25,7 +25,7 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
-if any changes in configuration only, then need to restart nginx
+# if any changes in configuration only, then need to restart nginx
 - name: copy backend config
   ansible.builtin.template:
     src: expense.conf.j2
