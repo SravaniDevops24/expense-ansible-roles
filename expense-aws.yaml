@@ -1,0 +1,21 @@
+- name: create ec2 and route 53 records
+  hosts: localhost
+  vars:
+    zone: daws24.online
+  tasks:
+  - name: create ec2 instances
+    amazon.aws.ec2_instance:
+      instance_type: t2.micro
+      name: "{{ item }}"
+      security_group: allow-everything
+      image_id: ami-090252cbe0679e58
+      tags:
+        Name: "{{ item }}"
+    loop:
+    - db
+    - backend
+    - frontend
+  register: ec2_instances_info
+
+# - name: create r53 records
+#   amazon.aws.route53:
